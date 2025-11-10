@@ -1,12 +1,32 @@
 .login-container{
   display: flex;
   min-height: 100vh;
+  // border: 2px solid green;
 
   .login-form-wrapper{
     flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    // border: 2px solid;
+
+    .row{
+      // border: 2px solid red;
+      width: 100%;
+    }
+      .row-brand{
+        // height: 12%;
+        // background-color: blue;
+        display: flex;
+      }
+      .row-login{
+        height: 90%;
+        // background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
     .login-form-box{
       width: 100%;
@@ -18,10 +38,13 @@
   .login-banner-wrapper{
     flex: 1;
     background-color: #A28CE4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img{
       width: 100%;
-      height: 100%;
+      max-height: 80vh;
       object-fit: cover;
     }
   }
@@ -36,6 +59,7 @@
   }
 
   .login-banner-wrapper{
-    display: none;
+    display: none !important;
+     
   }
 }

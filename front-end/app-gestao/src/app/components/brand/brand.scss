@@ -1,0 +1,22 @@
+.brand-container{
+    width: 100%;
+    display: flex;
+    // background-color: red;
+
+    .logo-wrapper{
+      display: flex;
+
+      .logo{
+        width: auto;
+        img{
+          height: 100px; // tamanho padrão de logo
+        }
+      }
+    }
+    .title-wrapper{
+        // border: 2px solid;
+        display: flex;
+        align-items: center;
+     }
+
+}
