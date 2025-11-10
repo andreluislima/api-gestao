@@ -1,0 +1,29 @@
+<form class="form p-4">
+  <h2 class="mb-4">{{ title_form }}</h2>
+
+  <div class="form-group mt-5 mb-5" *ngFor="let field of fields">
+    <label class="fw-semibold" for="exampleInputEmail1">{{ field.label }}</label>
+    <input 
+        [type]="field.type" 
+        class="form-control" 
+        [id]="field.id"
+        [placeholder]="field.placeholder"
+        
+        />
+    <!-- <small id="emailHelp" class="form-text text-muted"
+      >Não compartilhe sua senha com ninguém.</small
+    > -->
+  </div>
+
+<div class="mt-4 d-flex gap-3">
+    <button
+      *ngFor="let b of buttons"
+      [type]="b.type"
+      class="btn"
+      [ngClass]="b.style"
+      [routerLink]="b.link? b.link:null"
+    >
+      {{ b.label }}
+    </button>
+  </div>
+</form>

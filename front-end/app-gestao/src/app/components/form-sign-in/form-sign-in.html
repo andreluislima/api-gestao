@@ -1,0 +1,19 @@
+<form class="form p-4">
+  <h2 class="mb-4">{{ title_form }}</h2>
+
+  <div class="form-group mt-5 mb-5" *ngFor="let field of fields">
+    <label class="fw-semibold" for="exampleInputEmail1">{{ field.label }}</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+  </div>
+
+  <div class="mt-4 d-flex gap-3">
+    <button
+      *ngFor="let b of buttons"
+      [type]="b.type"
+      class="btn"
+      [ngClass]="b.style"
+    >
+      {{ b.label }}
+    </button>
+  </div>
+ </form>
