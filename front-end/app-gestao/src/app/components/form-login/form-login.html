@@ -2,13 +2,14 @@
   <h2 class="mb-4">{{ title_form }}</h2>
 
   <!-- campos dinâmicos -->
-  <div class="form-group mb-5" *ngFor="let field of fields">
-    <label>{{ field.label }}</label>
+  <div class="form-group mb-4" *ngFor="let field of fields">
+    <label class="fw-semibold">{{ field.label }}</label>
     <input
       [type]="field.type"
       [formControlName]="field.name"
       class="form-control"
       [placeholder]="field.placeholder"
+      [mask]="field.name ==='login'? '000.000.000-00': null"
     />
 
     <!-- mensagem de erro dinâmica -->
@@ -22,7 +23,7 @@
 
   <!-- botões -->
   <div class="mt-4 d-flex gap-3">
-    <button 
+    <button
       *ngFor="let b of buttons"
       [type]="b.type"
       class="btn"
