@@ -1,27 +1,33 @@
-<form class="form p-4">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form p-4">
   <h2 class="mb-4">{{ title_form }}</h2>
 
-  <div class="form-group mt-5 mb-5" *ngFor="let field of fields">
-    <label class="fw-semibold" for="exampleInputEmail1">{{ field.label }}</label>
-    <input 
-        [type]="field.type" 
-        class="form-control" 
-        [id]="field.id"
-        [placeholder]="field.placeholder"
-        
-        />
-    <!-- <small id="emailHelp" class="form-text text-muted"
-      >Não compartilhe sua senha com ninguém.</small
-    > -->
+  <!-- campos dinâmicos -->
+  <div class="form-group mb-5" *ngFor="let field of fields">
+    <label>{{ field.label }}</label>
+    <input
+      [type]="field.type"
+      [formControlName]="field.name"
+      class="form-control"
+      [placeholder]="field.placeholder"
+    />
+
+    <!-- mensagem de erro dinâmica -->
+    <small
+      class="text-danger"
+      *ngIf="loginForm.get(field.name)?.touched && loginForm.get(field.name)?.invalid"
+    >
+      {{ getErrorMessage(field.name) }}
+    </small>
   </div>
 
-<div class="mt-4 d-flex gap-3">
-    <button
+  <!-- botões -->
+  <div class="mt-4 d-flex gap-3">
+    <button 
       *ngFor="let b of buttons"
       [type]="b.type"
       class="btn"
       [ngClass]="b.style"
-      [routerLink]="b.link? b.link:null"
+      [routerLink]="b.link ? b.link : null"
     >
       {{ b.label }}
     </button>
