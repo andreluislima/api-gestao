@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form-sign-in',
-  imports: [RouterLink, CommonModule],
+  imports: [CommonModule],
   templateUrl: './form-sign-in.html',
   styleUrl: './form-sign-in.scss',
 })

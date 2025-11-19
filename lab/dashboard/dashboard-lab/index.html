@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>DASHBOARD - BASE</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,
+        300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- SB ADMIN 2 via CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.1.4/css/sb-admin-2.min.css"
+    />
+
+    <!-- FONT AWESOME (NECESSÁRIO PARA OS ICONES) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- SIDEBAR -->
+      <ul
+        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
+        <!-- Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="#"
+        >
+          <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">Meu APP</div>
+        </a>
+
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-heading">Interface</div>
+
+        <!-- Menu exemplo -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+          >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Componentes</span>
+          </a>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Elementos:</h6>
+              <a class="collapse-item" href="#">Botões</a>
+              <a class="collapse-item" href="#">Cards</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Utilities -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseUtilities"
+          >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Utilidades</span>
+          </a>
+          <div
+            id="collapseUtilities"
+            class="collapse"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Personalização:</h6>
+              <a class="collapse-item" href="#">Cores</a>
+              <a class="collapse-item" href="#">Bordas</a>
+              <a class="collapse-item" href="#">Animações</a>
+              <a class="collapse-item" href="#">Outros</a>
+            </div>
+          </div>
+        </li>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-heading">Extras</div>
+
+        <!-- Pages -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapsePages"
+          >
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Páginas</span>
+          </a>
+          <div
+            id="collapsePages"
+            class="collapse"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Acesso:</h6>
+              <a class="collapse-item" href="#">Login</a>
+              <a class="collapse-item" href="#">Registro</a>
+              <a class="collapse-item" href="#">Recuperar senha</a>
+              <div class="collapse-divider"></div>
+              <h6 class="collapse-header">Outros:</h6>
+              <a class="collapse-item" href="#">404</a>
+              <a class="collapse-item" href="#">Página em branco</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Gráficos</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tabelas</span>
+          </a>
+        </li>
+
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Toggle da sidebar -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- END SIDEBAR -->
+
+      <!-- CONTENT WRAPPER -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- MAIN CONTENT -->
+        <div id="content">
+          <!-- TOPBAR -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+          >
+            <!-- BOTÃO SANDUÍCHE -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- PESQUISA -->
+            <form
+              class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control bg-light border-0 small"
+                  placeholder="Buscar..."
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- TOPBAR ITEMS -->
+            <ul class="navbar-nav ml-auto">
+              <!-- ALERTAS -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+              </li>
+
+              <!-- MENSAGENS -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="messagesDropdown"
+                >
+                  <i class="fas fa-envelope fa-fw"></i>
+                  <span class="badge badge-danger badge-counter">7</span>
+                </a>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- usuário -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                    >André</span
+                  >
+                  <img
+                    class="img-profile rounded-circle"
+                    src="https://via.placeholder.com/60"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- END TOPBAR -->
+
+          <!-- PAGE CONTENT -->
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            </div>
+
+            <!-- CARDS -->
+            <div class="row">
+              <!-- Card 1 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                    >
+                      Receita Mensal
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      R$ 40.000
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-success text-uppercase mb-1"
+                    >
+                      Receita Anual
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      R$ 215.000
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-info text-uppercase mb-1"
+                    >
+                      Tarefas
+                    </div>
+                    50%
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+                    >
+                      Pendências
+                    </div>
+                    18
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAINEL 1 – FULL WIDTH -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="card shadow">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Painel de Largura Total
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    Este é um painel simples ocupando toda a largura disponível
+                    da página.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAINEL 2 – TABELA -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="card shadow">
+                  <div
+                    class="card-header py-3 d-flex justify-content-between align-items-center"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Tabela de Exemplo
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered" width="100%">
+                        <thead class="thead-light">
+                          <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Item A</td>
+                            <td>
+                              <span class="badge badge-success">Ativo</span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-sm">
+                                Ver
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Item B</td>
+                            <td>
+                              <span class="badge badge-warning">Pendente</span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-sm">
+                                Ver
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Item C</td>
+                            <td>
+                              <span class="badge badge-danger">Inativo</span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-sm">
+                                Ver
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAINEL 3 – QUATRO CARDS -->
+            <div class="row">
+              <!-- Card 1 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow h-100 py-2 border-left-primary">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                    >
+                      Usuários Online
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      134
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow h-100 py-2 border-left-success">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-success text-uppercase mb-1"
+                    >
+                      Vendas Hoje
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      R$ 8.920
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow h-100 py-2 border-left-info">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-info text-uppercase mb-1"
+                    >
+                      Tickets
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">58</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow h-100 py-2 border-left-warning">
+                  <div class="card-body">
+                    <div
+                      class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+                    >
+                      Alertas
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var sidebar = document.getElementById("accordionSidebar");
+        var toggleTop = document.getElementById("sidebarToggleTop");
+        var toggle = document.getElementById("sidebarToggle");
+
+        function toggleSidebar() {
+          document.body.classList.toggle("sidebar-toggled");
+          if (sidebar) {
+            sidebar.classList.toggle("toggled");
+          }
+        }
+
+        if (toggleTop) {
+          toggleTop.addEventListener("click", toggleSidebar);
+        }
+
+        if (toggle) {
+          toggle.addEventListener("click", toggleSidebar);
+        }
+      })();
+    </script>
+  </body>
+</html>
