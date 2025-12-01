@@ -1,52 +1,6 @@
 .wrapper {
   display: flex;
+  min-height: 100vh;   /* ocupa a altura toda da tela */
+  width: 100%;         /* ocupa 100% da largura */
 }
 
-/* conteúdo ocupa o resto da tela */
-.content-wrapper {
-  border: 2px solid red; // só pra visualizar
-  flex: 1 1 auto;
-}
-
-/* largura padrão da sidebar */
-.wrapper .sidebar {
-  width: 14rem;
-  transition: width 0.2s ease;
-}
-
-/* ===========================
-   DESKTOP (>= md) – recolher = sidebar estreita
-   =========================== */
-@media (min-width: 768px) {
-  .wrapper.sidebar-toggled .sidebar,
-  .wrapper .sidebar.toggled {
-    width: 6% !important;  /* mantém visível, só ícones */
-    overflow: visible;
-  }
-
-  /* esconde textos dos menus quando recolhido */
-  .wrapper.sidebar-toggled .sidebar .nav-link span,
-  .wrapper .sidebar.toggled .nav-link span {
-    // opacity: 0;
-    // width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  /* esconde os títulos de seção (INTERFACE, EXTRAS…) */
-  .wrapper.sidebar-toggled .sidebar .sidebar-heading,
-  .wrapper .sidebar.toggled .sidebar-heading {
-    display: none;
-  }
-}
-
-/* ===========================
-   MOBILE (< md) – recolher = some tudo
-   =========================== */
-@media (max-width: 767.98px) {
-  .wrapper.sidebar-toggled .sidebar,
-  .wrapper .sidebar.toggled {
-    width: 0 !important;
-    overflow: hidden;
-  }
-}

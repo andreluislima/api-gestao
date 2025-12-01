@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+  sidebarToggled = false;
 
+  toggleSidebar():void{
+    this.sidebarToggled = !this.sidebarToggled;
+  }
 }
