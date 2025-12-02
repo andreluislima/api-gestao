@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
+ import { Dashboard } from "../../views/dashboard/dashboard";
 import { Sidebar } from "../../../components/sidebar/sidebar";
-import { Dashboard } from "../../views/dashboard/dashboard";
-
+ 
 @Component({
   selector: 'app-default-layout',
-  imports: [CommonModule, Sidebar, Dashboard],
+  imports: [CommonModule, Dashboard, Sidebar],
   templateUrl: './default-layout.html',
   styleUrl: './default-layout.scss',
   encapsulation: ViewEncapsulation.None
