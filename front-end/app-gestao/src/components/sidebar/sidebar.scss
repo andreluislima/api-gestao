@@ -3,7 +3,14 @@
   width: 14rem;
   flex-shrink: 0;
   transition: width 0.2s ease;
+
 } /* ========== DESKTOP (MD+) ========== */
+
+.sidebar{
+  // border: 2px solid red;
+  height: 100%;
+}
+
 @media (min-width: 768px) {
   .wrapper.sidebar-toggled .sidebar,
   .wrapper .sidebar.toggled {
@@ -19,6 +26,7 @@
     display: none;
   }
 } /* ========== MOBILE ========== */
+
 @media (max-width: 767.98px) {
   .wrapper.sidebar-toggled .sidebar,
   .wrapper .sidebar.toggled {
