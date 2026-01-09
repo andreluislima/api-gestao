@@ -1,0 +1,32 @@
+<div class="container-fluid p-3">
+  <div class="row m-0">
+    <div class="col-12">
+      <div class="sub-title p-2 mb-1">
+        <h2>Despesas:</h2>
+      </div>
+      <form class="needs-validation p-3" novalidate>
+        <div class="row g-3">
+          <ng-container *ngFor="let item of table">
+            <div *ngIf="item.type !== 'actions'; else actionsTpl" [class]="item.colClass">
+              <label class="form-label mb-1">{{ item.col }}</label>
+
+              <input [type]="item.type" class="form-control" required />
+            </div>
+
+            <ng-template #actionsTpl>
+              <div [class]="item.colClass + ' col-actions'">
+                <label class="form-label mb-1">{{ item.col }}</label>
+
+                <div class="actions-wrap">
+                  <button type="button" class="btn btn-secondary">Pesquisar</button>
+                  <button type="button" class="btn btn-primary">Editar</button>
+                  <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
