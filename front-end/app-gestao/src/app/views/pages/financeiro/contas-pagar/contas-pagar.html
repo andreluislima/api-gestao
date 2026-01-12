@@ -2,14 +2,40 @@
   <div class="row m-0">
     <div class="col-12">
       <div class="sub-title p-2 mb-1">
-        <h2>Despesas:</h2>
+        <h2>Despesas</h2>
       </div>
-      <form class="needs-validation p-3" novalidate>
+
+      <div class="row g-3 mb-2 controle-form p-3 align-items-center">
+        <div class="col-6 col-md-3">
+          <span class="badge bg-primary px-3 py-2">Janeiro/26</span>
+        </div>
+
+        <div class="col-6 col-md-9 text-end">
+          <button class="btn btn-success">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-2 controle-form p-2 align-items-end">
+        <div class="col-12 col-md-6">
+          <input type="search" placeholder="Pesquisar" class="form-control" />
+        </div>
+
+        <div class="col-6 col-md-3">
+          <label class="form-label">Total</label>
+          <input type="text" class="form-control" readonly />
+        </div>
+
+        <div class="col-6 col-md-3">
+          <label class="form-label">Pagos</label>
+          <input type="text" class="form-control" readonly />
+        </div>
+      </div>
+
+      <!-- <form class="needs-validation p-3" novalidate>
         <div class="row g-3">
           <ng-container *ngFor="let item of table">
             <div *ngIf="item.type !== 'actions'; else actionsTpl" [class]="item.colClass">
-              <label class="form-label mb-1">{{ item.col }}</label>
-
+              <label for="" class="form-lable mb-1">{{ item.col }}</label>
               <input [type]="item.type" class="form-control" required />
             </div>
 
@@ -26,7 +52,61 @@
             </ng-template>
           </ng-container>
         </div>
-      </form>
+      </form> -->
+
+      <div class="mb-4">
+        <p-button
+          type="button"
+          icon="pi pi-chevron-left"
+          (click)="prev()"
+          [disabled]="isFirstPage()"
+          text
+        />
+        <p-button type="button" icon="pi pi-refresh" (click)="reset()" text />
+        <p-button
+          type="button"
+          icon="pi pi-chevron-right"
+          (click)="next()"
+          [disabled]="isLastPage()"
+          text
+        />
+      </div>
+      <div class="card">
+        <p-table
+          [value]="customers"
+          [paginator]="true"
+          [rows]="5"
+          [first]="first"
+          [showCurrentPageReport]="true"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+          (onPage)="pageChange($event)"
+          [rowsPerPageOptions]="[10, 25, 50]"
+        >
+          <ng-template #header>
+            <tr>
+              <th style="width: 25%">Name</th>
+              <th style="width: 25%">Country</th>
+              <th style="width: 25%">Company</th>
+              <th style="width: 25%">Representative</th>
+            </tr>
+          </ng-template>
+          <ng-template #body let-customer>
+            <tr>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.country.name }}</td>
+              <td>{{ customer.company }}</td>
+              <td>{{ customer.representative.name }}</td>
+            </tr>
+          </ng-template>
+          <ng-template #paginatorleft>
+            <p-button type="button" icon="pi pi-plus" text />
+          </ng-template>
+          <ng-template #paginatorright>
+            <p-button type="button" icon="pi pi-cloud" text />
+          </ng-template>
+        </p-table>
+      </div>
     </div>
   </div>
 </div>
