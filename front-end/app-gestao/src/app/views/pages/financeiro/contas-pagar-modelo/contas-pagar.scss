@@ -1,0 +1,113 @@
+/* Base (vale pra todos) */
+.sub-title {
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+form {
+  background-color: rgb(189, 187, 187);
+
+  label {
+    font-weight: 500;
+  }
+}
+
+/* IMPORTANTÍSSIMO: permite o grid encolher sem vazar */
+.row > [class*='col-'] {
+  min-width: 0;
+}
+
+.form-control {
+  min-width: 0;
+}
+
+/* Botões de ações (base) */
+.actions-wrap {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* evita estouro */
+  align-items: center;
+}
+
+.actions-wrap .btn {
+  white-space: nowrap;
+}
+
+.controle-form {
+  border-bottom: 2px solid;
+  align-items: center;
+}
+
+.controle-form label{
+  background-color: #d9d9d9;
+  padding: 10px;
+  border-radius: 10px;
+}
+.controle-form input {
+  border: 2px solid !important;
+}
+
+.card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   LAPTOP PEQUENO (Bootstrap lg até antes do xl)
+   ~ 992px a 1199.98px
+   Objetivo: 2 linhas e Ações em linha própria
+   ========================================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* força a coluna de ações a ocupar 100% */
+  .col-actions {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* botões em 3 colunas (se couber) ou quebrando sem estourar */
+  .actions-wrap .btn {
+    flex: 1 1 180px; /* 2 por linha ou 3, conforme espaço */
+    min-width: 160px;
+  }
+}
+
+/* =========================================================
+   LAPTOP GRANDE (xl até antes do xxl)
+   ~ 1200px a 1439.98px
+   Objetivo: manter 1 linha, mas ações compactas e sem estourar
+   ========================================================= */
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  /* aqui a ideia é manter o layout em linha */
+  .col-actions {
+    /* não força 100%, deixa seguir o colClass do item */
+  }
+
+  /* botões menores e fixos (cabem sem “vazar”) */
+  .actions-wrap {
+    flex-wrap: nowrap; /* fica em linha */
+  }
+
+  .actions-wrap .btn {
+    flex: 0 0 auto;
+    padding-inline: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   EXTRA: se quiser, no mobile/tablet os botões ficam empilhados
+   ========================================================= */
+@media (max-width: 991.98px) {
+  .actions-wrap {
+    flex-direction: column;
+  }
+
+  .actions-wrap .btn {
+    width: 100%;
+  }
+}
