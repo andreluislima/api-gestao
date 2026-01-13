@@ -22,18 +22,17 @@
         type="search"
         class="form-control"
         placeholder="Pesquisar por descrição/empresa"
-        (input)="onSearch($event)"
       />
     </div>
 
     <div class="col-6 col-lg-3">
       <label class="form-label">Total</label>
-      <input type="text" class="form-control" [value]="total | currency:'BRL'" readonly />
+      <input type="text" class="form-control"  readonly />
     </div>
 
     <div class="col-6 col-lg-3">
       <label class="form-label">Pagos</label>
-      <input type="text" class="form-control" [value]="pagos | currency:'BRL'" readonly />
+      <input type="text" class="form-control" readonly />
     </div>
   </div>
 
