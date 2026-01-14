@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
-import { Button } from 'primeng/button';
 import { SelectModule } from 'primeng/select';
 import { Despesa } from '../../../../../domain/despesas';
 import { DespesaService } from '../../../../../service/DespesaService';
 
 @Component({
   selector: 'app-contas-pagar',
-  imports: [CommonModule, TableModule, Button, SelectModule],
+  imports: [CommonModule, TableModule, SelectModule],
   standalone: true,
   templateUrl: './contas-pagar.html',
   styleUrl: './contas-pagar.scss',

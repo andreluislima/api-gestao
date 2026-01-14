@@ -3,6 +3,7 @@ import { Login } from './views/pages/auth/login/login';
 import { SignIn } from './views/pages/auth/sign-in/sign-in';
 import { DefaultLayout } from './layout/default-layout/default-layout';
 import { ContasPagar } from './views/pages/financeiro/contas-pagar/contas-pagar';
+import { InsereDespesa } from './views/pages/financeiro/insere-despesa/insere-despesa';
 
 
 export const routes: Routes = [
@@ -10,5 +11,6 @@ export const routes: Routes = [
     {path:'signin', component:SignIn},
     {path:'dashboard', component:DefaultLayout},
     {path:'despesas', component:ContasPagar},
+    {path:'criarDespesa', component:InsereDespesa},
     {path:'', redirectTo:'login', pathMatch:'full'}
 ];
